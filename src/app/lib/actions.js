@@ -16,11 +16,14 @@
 //     throw error;
 //   }
 // }
-
-import { signIn } from '@auth';
+import { signIn } from 'next-auth/react';
+// import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
-
-export async function authenticate(prevState, formData) {
+// ...
+export async function authenticate(
+  prevState,
+  formData,
+) {
   try {
     await signIn('credentials', formData);
   } catch (error) {
